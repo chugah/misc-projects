@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Passing Variables with JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <a href="./pass-value.html">pass-value</a>
+    <h4>Passing variables between html pages</h4>
+    <p>You selected: &nbsp;<span id="heading-title"></span></p>
+    <script>
+      $(document).ready(function(){
+        if(localStorage.getItem("inputvalue")){
+          $('span').text(localStorage.getItem("inputvalue"));
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.accordion__container {
+  border: 1px solid blue;
+}
+.accordion__container::after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+.accordion__item-wrapper {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+.accordion__item {
+  height: 500px;
+  width: 20%;
+  float: left;
+  background-color: #ffcece;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  box-sizing: border-box;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.accordion__item.state-collapsed {
+  width: 50px;
+}
+.accordion__item.state-active {
+  width: calc(100% - 200px);
+}

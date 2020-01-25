@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Passing Variables with JS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+      body {
+        padding: 1%;
+      }
+      .grid-container {
+        display: grid;
+        height: 75%;
+        align-content: center;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+        background-color: #2196F3;
+        padding: 2.5%;
+      }
+
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Passing variables between html pages</h2>
+    <section class="grid-container">
+      <div class="grid-item">condition 1</div>
+      <div class="grid-item">condition 2</div>
+      <div class="grid-item">condition 3</div>
+      <div class="grid-item">condition 4</div>
+      <div class="grid-item">condition 5</div>
+      <div class="grid-item">condition 6</div>
+      <div class="grid-item">condition 7</div>
+      <div class="grid-item">condition 8</div>
+      <div class="grid-item">condition 9</div>
+      <div class="grid-item">condition 10</div>
+      <div class="grid-item">condition 11</div>
+      <div class="grid-item">condition 12</div>
+    </section>
+    <a href="./another.html">Next</a>
+    <p id="heading-title"></p>
+    <!-- <form class="form-group">
+      <label for="text">Change title:</label>
+        <input type="text" class="form-control inputBox" id="text" name="text">
+    </form>
+    <button id="submit">next</button> -->
+    <script>
+      // $(document).ready(function(){
+      //   if(localStorage.getItem("inputvalue")){
+      //     $('p').text(localStorage.getItem("inputvalue"));
+      //   }
+      //
+      //   $('button').on('click', function() {
+      //   localStorage.setItem("inputvalue", $('#text').val());
+      //   $('p').text(localStorage.getItem("inputvalue"));
+      //   });
+      // });
+      // localStorage.removeItem("inputvalue");
+
+      let divs = document.querySelectorAll('div');
+
+      Object.entries(divs).map(( object ) => {
+        console.log('object is', object);
+        object[1].addEventListener('click', function() {
+
+          // Output innerHTML of the clicked element
+          console.log("Hello " + this +
+                          " (" + this.innerHTML + ") from map method...");
+          localStorage.setItem('inputvalue', this.innerHTML);
+          $('p').text(localStorage.getItem('inputvalue'));
+
+        });
+      });
+    </script>
+  </body>
+</html>
+<!-- https://www.freecodecamp.org/news/how-to-call-javascript-code-on-multiple-div-elements-without-the-id-attribute-59596e570fcf/
+https://stackoverflow.com/questions/13420207/native-javascript-equivilent-of-text-for-single-selected-element -->

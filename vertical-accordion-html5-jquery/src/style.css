@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Coming+Soon);
+
+.wrap
+{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+  overflow: hidden;
+  height:400px;
+}
+
+/*--------fixed column--------*/
+header
+{
+	width: 20%;
+	float: left;
+	background:#333;
+	position:relative;
+  height:400px;
+}
+
+p{
+  padding:20px;
+  text-align:center;
+  color:#fff;
+  font-family: 'Coming Soon', cursive;
+  font-size:16px;
+}
+/* --------Columns--------*/
+
+section{
+  float: left;
+	width:16%;
+	overflow:hidden;
+  height:400px;
+}
+/*Colors*/
+.one {background:#BFF073;}
+.two {background: #0DC9F7}
+.three {background:#7F7F7F;}
+.four {background: #F05B47}
+.five {background: #ED1C24;}
+
+/*For JS*/
+.opendiv {
+	float:left;
+	width:60%;
+}
+
+.closediv {
+	float: left;
+	width:5%;
+}
+
+.closediv:hover {
+  opacity:0.8;
+}
